@@ -13,11 +13,21 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
 
         if @post.update(title: params[:post][:title], body: params[:post][:body])
-            redirect_to @post
+            redirect_to post_path(@post)
         else
-            debugger
             render :edit, status: :unprocessable_entity
-            
         end
+    end
+
+    def show
+        debugger
+    end
+
+    def new
+
+    end
+
+    def create
+        
     end
   end
