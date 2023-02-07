@@ -28,6 +28,10 @@ class PostsController < ApplicationController
     end
 
     def create
-        
+        if @post is vaild then save
+            redirect_to index(@post)
+        else
+            render:new, status: :unprocessable_entity
+        end
     end
   end
